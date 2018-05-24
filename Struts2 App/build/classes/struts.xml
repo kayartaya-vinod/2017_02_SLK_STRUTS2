@@ -1,0 +1,82 @@
+<?xml version="1.0" ?>
+
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	
+	<package name="first" extends="struts-default">
+	
+		<!-- define one or more request-action-result mapping -->
+		<action name="hello" class="training.actions.HelloAction">
+			<result name="success">/WEB-INF/pages/helloResponse.jsp</result>
+		</action>
+	
+	</package>
+	
+	<package name="addressbook" extends="struts-default">
+		
+		<global-results>
+			<result name="error">/WEB-INF/pages/addressbookError.jsp</result>
+			<result name="dashboard-login-failed">/WEB-INF/pages/loginForm.jsp</result>
+		</global-results>
+		
+		<action name="login" class="training.actions.UserAction" method="login">
+			<result name="input">/WEB-INF/pages/loginForm.jsp</result>
+			<result name="login-form">/WEB-INF/pages/loginForm.jsp</result>
+			<result name="login-success" type="redirect">dashboard</result>
+			<result name="login-failed">/WEB-INF/pages/loginForm.jsp</result>
+		</action>
+		
+		<action name="logout" class="training.actions.UserAction" method="logout">
+			<result name="logout-success">/WEB-INF/pages/loginForm.jsp</result>
+		</action>
+		
+		<action name="register" class="training.actions.UserAction" method="register">
+			<result name="registration-success"></result>
+			<result name="registration-failed"></result>
+		</action>
+		
+		<action name="dashboard" class="training.actions.DashboardAction" >
+			<result name="success">/WEB-INF/pages/dashboard.jsp</result>
+		</action>
+		
+		<action name="delete-contact" class="training.actions.DashboardAction" 
+			method="deleteContact">
+			<result name="success" type="redirect">dashboard</result>
+		</action>
+		
+		<action name="add-contact" class="training.actions.DashboardAction" 
+			method="addContact">
+			<result name="success">/WEB-INF/pages/contactForm.jsp</result>
+		</action>
+		
+		
+		<action name="edit-contact" class="training.actions.DashboardAction" 
+			method="editContact">
+			<result name="success">/WEB-INF/pages/contactForm.jsp</result>
+		</action>
+		
+		<action name="save-contact" class="training.actions.DashboardAction" 
+			method="saveContact">
+			<result name="success" type="redirect">dashboard</result>
+		</action>
+		
+		<action name="sort" class="training.actions.DashboardAction" 
+			method="sortContactList">
+			<result name="success">/WEB-INF/pages/dashboard.jsp</result>
+		</action>
+	</package>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</struts>

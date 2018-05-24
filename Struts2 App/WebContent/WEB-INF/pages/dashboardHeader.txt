@@ -1,0 +1,12 @@
+<div class="btn-group">
+	<a class="btn btn-default" href="">
+		<span class="glyphicon glyphicon-sunglasses"></span>
+		View all contacts</a>
+	<a class="btn btn-default" href="add-contact">
+		<span class="glyphicon glyphicon-user"></span>
+		Add new contact</a>
+	<a class="btn btn-default" href="">
+		<span class="glyphicon glyphicon-cog"></span>
+		Settings</a>
+</div>
+<br /><br />

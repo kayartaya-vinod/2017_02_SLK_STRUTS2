@@ -1,0 +1,20 @@
+<%@ taglib uri="/struts-tags" prefix="s" %>
+
+					<!-- pave content ends here -->
+				</div>
+
+			</div>
+		</div>
+		
+		<div class="text-center">
+			A product by
+			<s:i18n name="training.messages.app">
+				<s:text name="app.createdBy" />
+				&middot;
+				<s:text name="app.copyrights" />
+			</s:i18n>
+		</div>
+	</div>
+</body>
+
+</html>
